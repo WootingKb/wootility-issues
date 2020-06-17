@@ -5,7 +5,7 @@ on:
     types: [opened, labeled]
 
 env:
-  GITHUB_TOKEN: ${{ secrets.SIMON_ORG_TOKEN }}
+  MY_GITHUB_TOKEN: ${{ secrets.SIMON_ORG_TOKEN }}
 
 jobs:
   assign_one_project:
