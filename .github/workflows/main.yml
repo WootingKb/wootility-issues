@@ -1,0 +1,36 @@
+name: Auto Assign to Backlog
+
+on:
+  issues:
+    types: [opened, labeled]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.SIMON_ORG_TOKEN }}
+
+jobs:
+  assign_one_project:
+    runs-on: ubuntu-latest
+    name: Assign to Project
+    steps:
+    - name: Assign NEW issues backlog inbox
+      uses: srggrs/assign-one-project-github-action@1.2.0
+      if: github.event.action == 'opened'
+      with:
+        project: 'https://github.com/orgs/WootingKb/projects/2'
+        column_name: 'Inbox'      
+      
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.SIMON_ORG_TOKEN }}"
+        project-url: "https://github.com/orgs/WootingKb/projects/2"
+        column-name: "Bugs"
+        label-name: "bug"
+        columns-to-ignore: "Assigned,Done"
+    
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.SIMON_ORG_TOKEN }}"
+        project-url: "https://github.com/orgs/WootingKb/projects/2"
+        column-name: "Features / Enhancement"
+        label-name: "enhancement"
+        columns-to-ignore: "Assigned,Done"
