@@ -25,7 +25,7 @@ jobs:
         project-url: "https://github.com/orgs/WootingKb/projects/2"
         column-name: "Bugs"
         label-name: "bug"
-        columns-to-ignore: "Assigned,Done"
+        columns-to-ignore: "Freezer,Assigned,Done"
     
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
@@ -33,4 +33,12 @@ jobs:
         project-url: "https://github.com/orgs/WootingKb/projects/2"
         column-name: "Features / Enhancement"
         label-name: "enhancement"
+        columns-to-ignore: "Freezer,Assigned,Done"
+        
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.SIMON_ORG_TOKEN }}"
+        project-url: "https://github.com/orgs/WootingKb/projects/2"
+        column-name: "Freezer"
+        label-name: "wontfix"
         columns-to-ignore: "Assigned,Done"
