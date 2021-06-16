@@ -13,8 +13,19 @@ A clear and concise description of what the problem is. Ex. I'm always frustrate
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen.
 
-**Describe alternatives you've considered**
+**Describe alternatives or workarounds you've considered**
 A clear and concise description of any alternative solutions or features you've considered.
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
+
+### Additional information
+<!-- Sections can be omitted if not relevant to particular feature request -->
+**Platform information**
+e.g. Windows 10/MacOS Big Sur/Linux
+
+**Wootility and Firmware version**
+Find in your Wootility Settings
+
+**Keyboard Type**
+e.g. Wooting Two ISO DE or Wooting One ANSI
