@@ -20,6 +20,7 @@ jobs:
         column_name: 'Inbox'      
       
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      if: github.event.action == 'labeled'
       with:
         action-token: "${{ secrets.SIMON_ORG_TOKEN }}"
         project-url: "https://github.com/orgs/WootingKb/projects/2"
@@ -28,6 +29,7 @@ jobs:
         columns-to-ignore: "Freezer,Assigned,Done"
     
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      if: github.event.action == 'labeled'
       with:
         action-token: "${{ secrets.SIMON_ORG_TOKEN }}"
         project-url: "https://github.com/orgs/WootingKb/projects/2"
@@ -36,6 +38,7 @@ jobs:
         columns-to-ignore: "Freezer,Assigned,Done"
         
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      if: github.event.action == 'labeled'
       with:
         action-token: "${{ secrets.SIMON_ORG_TOKEN }}"
         project-url: "https://github.com/orgs/WootingKb/projects/2"
